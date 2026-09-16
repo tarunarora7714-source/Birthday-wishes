@@ -1,0 +1,728 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: linear-gradient(135deg, #fff0f5, #ffd6e7, #ffc1d9);
+    color: #5a1835;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* FLOATING HEARTS */
+
+.hearts span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 25px;
+    animation: floatHeart 10s linear infinite;
+    opacity: 0.6;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hearts span:nth-child(1) {
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.hearts span:nth-child(2) {
+    left: 18%;
+    animation-delay: 2s;
+}
+
+.hearts span:nth-child(3) {
+    left: 32%;
+    animation-delay: 4s;
+}
+
+.hearts span:nth-child(4) {
+    left: 48%;
+    animation-delay: 1s;
+}
+
+.hearts span:nth-child(5) {
+    left: 62%;
+    animation-delay: 5s;
+}
+
+.hearts span:nth-child(6) {
+    left: 75%;
+    animation-delay: 3s;
+}
+
+.hearts span:nth-child(7) {
+    left: 88%;
+    animation-delay: 6s;
+}
+
+.hearts span:nth-child(8) {
+    left: 95%;
+    animation-delay: 7s;
+}
+
+
+@keyframes floatHeart {
+
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.birthday-card {
+    width: min(700px, 95%);
+    background: rgba(255, 255, 255, 0.82);
+    backdrop-filter: blur(10px);
+    padding: 60px 35px;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(126, 35, 75, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.8);
+    animation: cardAppear 1.2s ease;
+}
+
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.small-text {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #9c4265;
+}
+
+.birthday-card h1 {
+    font-size: clamp(45px, 8vw, 80px);
+    color: #c2185b;
+}
+
+.birthday-card h2 {
+    font-size: clamp(30px, 6vw, 50px);
+    color: #8e2449;
+    margin-bottom: 25px;
+}
+
+.intro {
+    font-size: 20px;
+    line-height: 1.8;
+    max-width: 560px;
+    margin: auto;
+}
+
+
+/* BUTTON */
+
+button {
+    margin-top: 30px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(135deg, #e91e63, #ad1457);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 10px 25px rgba(173, 20, 87, 0.3);
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.03);
+}
+
+
+/* LOVE MESSAGE */
+
+#loveMessage {
+    display: none;
+    margin-top: 30px;
+    padding: 25px;
+    background: #fff0f5;
+    border-radius: 20px;
+    line-height: 1.8;
+    font-size: 19px;
+    animation: messageAppear 0.6s ease;
+}
+
+
+@keyframes messageAppear {
+
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* GENERAL SECTIONS */
+
+.story,
+.memories,
+.reasons,
+.letter,
+.countdown-section,
+.final {
+    position: relative;
+    z-index: 1;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+
+.story h2,
+.memories h2,
+.reasons h2,
+.letter h2,
+.countdown-section h2 {
+    font-size: clamp(35px, 6vw, 55px);
+    color: #b01752;
+    margin-bottom: 30px;
+}
+
+
+.section-subtitle {
+    font-size: 18px;
+    margin-top: -15px;
+    margin-bottom: 40px;
+}
+
+
+/* COUNTDOWN */
+
+.countdown-section {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+
+.countdown {
+    max-width: 800px;
+    margin: 40px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 20px;
+}
+
+
+.time-box {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 20px;
+    padding: 25px 10px;
+
+    box-shadow:
+        0 10px 30px rgba(126, 35, 75, 0.15);
+}
+
+
+.time-box span {
+    display: block;
+    font-size: 45px;
+    font-weight: bold;
+    color: #c2185b;
+}
+
+
+.time-box small {
+    font-size: 16px;
+}
+
+
+/* STORY */
+
+.story-card {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px;
+
+    background: rgba(255, 255, 255, 0.75);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 15px 40px rgba(126, 35, 75, 0.15);
+
+    font-size: 19px;
+    line-height: 1.9;
+}
+
+
+.story-card p {
+    margin-bottom: 20px;
+}
+
+
+/* REASONS */
+
+.reason-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.reason-card {
+    background: rgba(255, 255, 255, 0.85);
+
+    border-radius: 25px;
+
+    padding: 35px 25px;
+
+    box-shadow:
+        0 15px 40px rgba(126, 35, 75, 0.15);
+
+    transition: 0.4s;
+}
+
+
+.reason-card:hover {
+    transform: translateY(-8px);
+}
+
+
+.reason-icon {
+    font-size: 50px;
+    margin-bottom: 15px;
+}
+
+
+.reason-card h3 {
+    color: #a3154d;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+
+.reason-card p {
+    line-height: 1.7;
+}
+
+
+/* MEMORIES */
+
+.memory-container {
+    max-width: 1100px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+.memory-card {
+    background: rgba(255, 255, 255, 0.85);
+
+    border-radius: 25px;
+
+    padding: 15px;
+
+    box-shadow:
+        0 15px 40px rgba(126, 35, 75, 0.15);
+
+    overflow: hidden;
+
+    transition: 0.4s;
+}
+
+
+.memory-card:hover {
+    transform: translateY(-8px);
+}
+
+
+.memory-photo {
+    display: block;
+
+    width: 100%;
+
+    height: 320px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    transition: 0.5s;
+}
+
+
+.memory-card:hover .memory-photo {
+    transform: scale(1.03);
+}
+
+
+.memory-card h3 {
+    margin-top: 20px;
+    font-size: 23px;
+    color: #a3154d;
+}
+
+
+.memory-card p {
+    padding: 15px 10px 10px;
+    line-height: 1.6;
+}
+
+
+/* LOVE LETTER */
+
+.letter {
+    background:
+        rgba(255, 255, 255, 0.25);
+}
+
+
+.letter-card {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 55px 45px;
+
+    background:
+        #fffafc;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 50px rgba(126, 35, 75, 0.18);
+
+    border-left: 8px solid #e91e63;
+}
+
+
+.letter-top {
+    font-size: 18px;
+
+    color: #b01752;
+
+    margin-bottom: 20px;
+}
+
+
+.letter-card h2 {
+    font-family: cursive;
+
+    margin-bottom: 35px;
+}
+
+
+.letter-content {
+    text-align: left;
+
+    font-size: 20px;
+
+    line-height: 2;
+}
+
+
+.letter-content p {
+    margin-bottom: 22px;
+}
+
+
+.signature {
+    text-align: right;
+
+    font-family: cursive;
+
+    font-size: 24px;
+
+    color: #b01752;
+}
+
+
+/* FINAL */
+
+.final-card {
+    max-width: 800px;
+
+    margin: auto;
+
+    background: rgba(255, 255, 255, 0.82);
+
+    padding: 60px 35px;
+
+    border-radius: 30px;
+
+    box-shadow:
+        0 20px 60px rgba(126, 35, 75, 0.2);
+}
+
+
+.final-card h2 {
+    font-size: clamp(35px, 6vw, 55px);
+
+    color: #b01752;
+
+    margin-bottom: 30px;
+}
+
+
+.final-card > p {
+    font-size: 20px;
+
+    line-height: 1.8;
+}
+
+
+#finalMessage {
+    display: none;
+
+    margin-top: 40px;
+
+    animation: messageAppear 1s ease;
+}
+
+
+.big-heart {
+    font-size: 90px;
+
+    animation: heartbeat 1.2s infinite;
+}
+
+
+@keyframes heartbeat {
+
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.18);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+.final-card h3 {
+    font-size: 30px;
+
+    color: #c2185b;
+
+    margin-bottom: 20px;
+}
+
+
+.forever {
+    font-size: 20px !important;
+
+    color: #a3154d;
+
+    font-weight: bold;
+}
+
+
+/* SURPRISE HEARTS */
+
+.surprise-heart {
+    position: fixed;
+
+    bottom: -40px;
+
+    font-size: 30px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation: surpriseFloat 5s linear forwards;
+}
+
+
+@keyframes surpriseFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            rotate(360deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* FOOTER */
+
+footer {
+    position: relative;
+
+    z-index: 1;
+
+    text-align: center;
+
+    padding: 30px 20px 50px;
+
+    font-size: 16px;
+
+    color: #8e2449;
+}
+
+
+/* TABLET */
+
+@media (max-width: 800px) {
+
+    .memory-container,
+    .reason-container {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+    }
+
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .hero {
+        padding: 30px 15px;
+    }
+
+
+    .birthday-card {
+        padding: 45px 20px;
+        border-radius: 22px;
+    }
+
+
+    .birthday-card h1 {
+        font-size: 48px;
+    }
+
+
+    .birthday-card h2 {
+        font-size: 35px;
+    }
+
+
+    .intro {
+        font-size: 17px;
+    }
+
+
+    .story,
+    .memories,
+    .reasons,
+    .letter,
+    .countdown-section,
+    .final {
+        padding: 60px 15px;
+    }
+
+
+    .story-card,
+    .letter-card,
+    .final-card {
+        padding: 35px 20px;
+    }
+
+
+    .countdown {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+
+    .time-box span {
+        font-size: 35px;
+    }
+
+
+    .letter-content {
+        font-size: 18px;
+    }
+
+
+    .memory-photo {
+        height: 300px;
+    }
+
+}
+#musicButton {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 15px;
+    border-radius: 30px;
+    box-shadow: 0 8px 20px rgba(173, 20, 87, 0.25);
+}
+
+@media (max-width: 600px) {
+    #musicButton {
+        top: 12px;
+        right: 12px;
+        padding: 10px 15px;
+        font-size: 13px;
+    }
+}
